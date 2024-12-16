@@ -1,0 +1,11 @@
+langgraph>=0.0.15
+langgraph-sdk>=0.0.15
+langsmith>=0.0.69
+langchain-community>=0.0.19
+langchain-core>=0.1.17
+langchain-openai>=0.0.5
+notebook>=7.0.7
+tavily-python>=0.3.1
+langgraph-cli>=0.0.15
+langchain_anthropic>=0.0.8
+python-dotenv>=1.0.0 
