@@ -151,16 +151,14 @@ builder.add_edge("finalize_summary", END)
 graph = builder.compile()
 
 
-
-
 def main():
     # For demonstration, we'll hard-code the research topic.
     # In a production scenario, you might read from command-line arguments or prompt the user.
-    research_topic = "Should you sleep train your baby?"
+    research_topic = "How do I build a SaaS software step by step?"
+    research_input = SummaryStateInput(research_topic=research_topic)
     visualize_graph(graph)
-    
     # Run the graph with the given input
-    result = graph.invoke({"research_topic": research_topic})
+    result = graph.invoke(research_input)
     
     # Save the results to a markdown file
     save_research_results(research_topic, result["running_summary"])

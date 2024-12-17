@@ -14,7 +14,7 @@ from dataclasses import dataclass
 @dataclass(kw_only=True)
 class Configuration:
     """The configurable fields for the research assistant."""
-    max_web_research_loops: int = 3
+    max_web_research_loops: int = 5
     local_llm: str = "llama3.3:70b-instruct-q2_K"
 
     @classmethod
