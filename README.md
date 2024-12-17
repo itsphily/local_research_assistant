@@ -1,28 +1,74 @@
-# Research Assistant
+# Local Research Assistant
 
-This repository contains a research assistant that helps with online research. It uses LangGraph to orchestrate a research workflow that:
+A tool that performs automated research on any topic using LangGraph, LangChain, and local LLMs through Ollama.
 
-1. Takes a research topic
-2. Performs web searches to gather relevant information
-3. Synthesizes information into a coherent summary
-4. Identifies follow-up questions to explore
-5. Iteratively explores those questions to build a comprehensive understanding
+## Features
+
+- Automated web research using Tavily API
+- Local LLM processing using Ollama
+- Multi-step research process:
+  - Query generation
+  - Web search
+  - Source summarization
+  - Reflection and follow-up questions
+- Results saved as markdown files
+- Research graph visualization
+
+## Prerequisites
+
+- Python 3.12+
+- [Ollama](https://ollama.ai/) installed
+- Tavily API key
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd local_research_assistant
+```
+
+2. Create and activate a virtual environment:
+```bash
+conda create -n local_research python=3.12
+conda activate local_research
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Pull the required Ollama model:
+```bash
+ollama pull llama3.3:70b-instruct-q2_K
+```
+
+5. Create a `.env` file in the project root with your API keys:
+```
+TAVILY_API_KEY=your_tavily_api_key
+```
 
 ## Usage
 
-First, copy `.env.example` to `.env` and add your API keys.
+Run the research assistant:
+```bash
+python src/local_research_assistant.py --topic "Your research topic"
+```
 
-Then run the notebook to see the research assistant in action.
+The results will be saved in the `outputs` directory as markdown files with timestamps.
 
-## Components
+## Configuration
 
-The main components are:
+- Model: The default model is `llama3.3:70b-instruct-q2_K`
+- Research loops: Default is 3 iterations
+- These can be modified in `src/configuration.py`
 
-- Research workflow orchestrated with LangGraph
-- Web search using Tavily
-- LLM-based information synthesis and question generation
-- State management to track research progress
+## Output
 
-## License
-
-MIT 
+The tool generates:
+- A research graph visualization (`test.png`)
+- A markdown file with:
+  - Research summary
+  - Sources used
+  - Timestamp 
