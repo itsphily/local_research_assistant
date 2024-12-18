@@ -1,0 +1,11 @@
+{
+    "dockerfile_lines": [],
+    "graphs": {
+      "local_research_assistant": "./src/local_research_assistant.py:graph"
+    },
+    "python_version": "3.12",
+    "env": "./.env",
+    "dependencies": [
+      "."
+    ]
+} 

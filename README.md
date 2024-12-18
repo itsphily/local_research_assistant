@@ -16,7 +16,7 @@ A tool that performs automated research on any topic using LangGraph, LangChain,
 
 ## Prerequisites
 
-- Python 3.12+
+- Python 3.11+ or 3.12+
 - [Ollama](https://ollama.ai/) installed
 - Tavily API key
 
@@ -49,11 +49,35 @@ ollama pull llama3.3:70b-instruct-q2_K
 TAVILY_API_KEY=your_tavily_api_key
 ```
 
+## Development Setup
+
+1. Install langgraph development dependencies:
+```bash
+pip install "langgraph-cli[inmem]"
+```
+
+2. Start the development server:
+```bash
+langgraph dev
+```
+
+This will:
+- Start the langgraph development server
+- Enable real-time graph visualization
+- Allow interactive debugging of the research process
+
 ## Usage
 
+### Basic Usage
 Run the research assistant:
 ```bash
 python src/local_research_assistant.py --topic "Your research topic"
+```
+
+### Development Usage
+Run the langgraph development server:
+```bash
+langgraph dev
 ```
 
 The results will be saved in the `outputs` directory as markdown files with timestamps.
@@ -71,4 +95,4 @@ The tool generates:
 - A markdown file with:
   - Research summary
   - Sources used
-  - Timestamp 
+  - Timestamp

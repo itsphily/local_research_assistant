@@ -154,7 +154,7 @@ graph = builder.compile()
 def main():
     # For demonstration, we'll hard-code the research topic.
     # In a production scenario, you might read from command-line arguments or prompt the user.
-    research_topic = "How do I build a SaaS software step by step?"
+    research_topic = "What are the best opportunities for AI agents in 2025?"
     research_input = SummaryStateInput(research_topic=research_topic)
     visualize_graph(graph)
     # Run the graph with the given input
