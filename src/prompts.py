@@ -57,4 +57,5 @@ Return your analysis as a JSON object:
 {{ 
     "knowledge_gap": "string",
     "follow_up_query": "string"
-}}"""
+}}
+"""
