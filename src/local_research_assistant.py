@@ -62,7 +62,7 @@ def web_search(state: SummaryState):
     """ Perform a web search"""
 
     #search the web
-    search_results = tavily_search(state.search_query, include_raw_content = True, max_results = 3)
+    search_results = tavily_search(state.search_query, include_raw_content = True, max_results = 10)
     #format the search results
     search_str = deduplicate_and_format_sources(search_results, max_tokens_per_source = 2000)
 
@@ -185,7 +185,7 @@ graph = builder.compile()
 def main():
     # For demonstration, we'll hard-code the research topic.
     # In a production scenario, you might read from command-line arguments or prompt the user.
-    research_topic = "How to build good AI research agents?"
+    research_topic = "DeepSeek-V3 Capabilities"
     research_input = SummaryStateInput(research_topic=research_topic)
     visualize_graph(graph)
     # Run the graph with the given input
